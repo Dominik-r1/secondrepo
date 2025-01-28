@@ -1,0 +1,24 @@
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  int LED = 2;
+  int sensorValue = analogRead(A0); // read value on analog pin 0
+
+  Serial.println(sensorValue); // prints out value
+  
+  if(sensorValue > 400)
+  {
+    digitalWrite(LED, HIGH);
+  }
+  
+  else if (sensorValue <= 400) 
+  {
+    digitalWrite(LED, LOW);
+  }
+
+  delay(1); //delay between reads
+}
